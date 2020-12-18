@@ -1,0 +1,9 @@
+
+% docker
+
+# Remove all stopped container
+docker conatiner prune
+
+
+# Show all stopped containers
+docker ps --filter "status=exited"
