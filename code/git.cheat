@@ -42,5 +42,8 @@ git remote remove <remote_name>
 # Shallow clone with depth 1 with all branches and submodules
 git clone --depth=1 --no-single-branch --recurse-submodules <repository> <clone_directory>
 
-# List subtree
-git log | grep git-subtree-dir | awk '{ print $2 }'
+# List all subtree
+git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq
+
+# List all exist subtree
+git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xargs -I {} bash -c 'if [ -d $(git rev-parse --show-toplevel)/{} ] ; then echo {}; fi'
