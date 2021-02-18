@@ -41,3 +41,6 @@ git remote remove <remote_name>
 
 # Shallow clone with depth 1 with all branches and submodules
 git clone --depth=1 --no-single-branch --recurse-submodules <repository> <clone_directory>
+
+# List subtree
+git log | grep git-subtree-dir | awk '{ print $2 }'
