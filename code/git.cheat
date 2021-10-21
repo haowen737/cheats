@@ -50,3 +50,6 @@ git log | grep git-subtree-dir | tr -d ' ' | cut -d ":" -f2 | sort | uniq | xarg
 
 # List all author
 git shortlog --summary --numbered --email
+
+# Diff HEAD and exclude with
+git diff HEAD ":(exclude)<exclude_with>"
