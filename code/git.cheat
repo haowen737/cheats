@@ -56,3 +56,6 @@ git shortlog --summary --numbered --email
 
 # Diff HEAD and exclude with
 git diff HEAD ":(exclude)<exclude_with>"
+
+# Show the last few commits
+git show -<number>
