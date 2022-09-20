@@ -59,3 +59,10 @@ git diff HEAD ":(exclude)<exclude_with>"
 
 # Show the last few commits
 git show -<number>
+
+# git merge conflict accept all incoming changes
+git merge --strategy-option theirs
+
+# git merge conflict accept all current changes
+git merge --strategy-option ours
+
