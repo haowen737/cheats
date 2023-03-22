@@ -53,3 +53,6 @@ git shortlog --summary --numbered --email
 
 # Diff HEAD and exclude with
 git diff HEAD ":(exclude)<exclude_with>"
+
+# List commit that different with master in current branch
+git lg --oneline master..
