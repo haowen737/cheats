@@ -4,6 +4,17 @@
 # Remove all stopped container
 docker conatiner prune
 
-
 # Show all stopped containers
 docker ps --filter "status=exited"
+
+# view (show) logs for all container by docker-compose
+docker-compose logs --follow
+
+# view (show) logs for all container by docker
+docker logs --follow
+
+# view (show) logs for running container
+docker ps -q | xargs -L 1 docker logs
+
+# view (show) logs for running container and follow
+docker ps -q | xargs -L 1 docker logs -f
