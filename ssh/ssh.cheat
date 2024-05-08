@@ -1,0 +1,4 @@
+% react
+
+# Check the ssh connection to github
+ssh -T git@github.com
