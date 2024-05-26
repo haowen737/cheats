@@ -1,0 +1,4 @@
+% unix
+
+# diff two files side by side
+sdiff <file1> <file2>
