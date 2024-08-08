@@ -4,6 +4,9 @@
 # Stop all container
 docker stop $(docker ps -a -q)
 
+# Stop all container
+docker start $(docker ps -a -q)
+
 # Remove all stopped container
 docker conatiner prune
 
