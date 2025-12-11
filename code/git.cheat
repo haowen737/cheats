@@ -42,6 +42,18 @@ git remote rename <old_remote_name> <new_remote_name>
 # Remove a remote for a git repository
 git remote remove <remote_name>
 
+# Delete remote tag (explicit ref to avoid branch/tag name clash)
+git push origin :refs/tags/<tag_name>
+
+# Delete remote branch (explicit ref)
+git push origin :refs/heads/<branch_name>
+
+# Delete tag locally and remotely (explicit ref)
+git tag -d <tag_name> && git push origin :refs/tags/<tag_name>
+
+# Delete branch locally and remotely (explicit ref; replace -D with -d if merged)
+git branch -D <branch_name> && git push origin :refs/heads/<branch_name>
+
 # Shallow clone with depth 1 with all branches and submodules
 git clone --depth=1 --no-single-branch --recurse-submodules <repository> <clone_directory>
 
@@ -71,4 +83,3 @@ git merge --strategy-option ours
 
 # git commit yolo
 git commit --message="Update"
-
