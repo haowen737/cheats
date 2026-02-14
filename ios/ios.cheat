@@ -1,0 +1,10 @@
+% ios
+
+# List all simulator devices
+xcrun simctl list devices
+
+# List available iPhone simulators
+xcrun simctl list devices available
+
+# List available iPhone simulators
+xcrun simctl list devices available | grep -i iphone
