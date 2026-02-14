@@ -1,55 +1,36 @@
 % yt-dlp
 
 # Download best video+audio (merge if needed)
-yt-dlp <url>
+yt-dlp <cookies> <url>
 
 # List available formats
-yt-dlp -F <url>
+yt-dlp <cookies> -F <url>
 
 # Pick a specific format (use format code from -F)
-yt-dlp -f <format_id> <url>
+yt-dlp <cookies> -f <format_id> <url>
 
 # Best video+audio with MP4 output
-yt-dlp -f "bv*+ba/b" --merge-output-format mp4 <url>
+yt-dlp <cookies> -f "bv*+ba/b" --merge-output-format mp4 <url>
 
 # Limit max resolution (<=720p)
-yt-dlp -f "bv*[height<=720]+ba/b" <url>
+yt-dlp <cookies> -f "bv*[height<=720]+ba/b" <url>
 
 # Exact resolution (fail if not available)
-yt-dlp -f "bv*[height=1080]+ba/b" <url>
+yt-dlp <cookies> -f "bv*[height=1080]+ba/b" <url>
 
 # Prefer a resolution with fallback
-yt-dlp -S "res:1080" <url>
+yt-dlp <cookies> -S "res:1080" <url>
 
 # Audio only (extract to mp3)
-yt-dlp -x --audio-format mp3 <url>
+yt-dlp <cookies> -x --audio-format mp3 <url>
 
 # Output filename template
-yt-dlp -o "%(title)s.%(ext)s" <url>
+yt-dlp <cookies> -o "%(title)s.%(ext)s" <url>
 
 # Download a playlist (explicit)
-yt-dlp --yes-playlist <playlist_url>
-
-# Skip playlists (single video only)
-yt-dlp --no-playlist <url>
+yt-dlp <cookies> --yes-playlist <playlist_url>
 
 # Download subtitles (manual and auto)
-yt-dlp --write-subs --write-auto-subs --sub-lang "en,zh-Hans" <url>
+yt-dlp <cookies> --write-subs --write-auto-subs --sub-lang "en,zh-Hans" <url>
 
-# Embed subtitles and thumbnail into media file
-yt-dlp --embed-subs --embed-thumbnail <url>
-
-# Resume downloads and avoid .part files
-yt-dlp -c --no-part <url>
-
-# Limit download rate (e.g. 2M, 500K)
-yt-dlp -r 2M <url>
-
-# Use cookies from browser (exported file)
-yt-dlp --cookies <cookies.txt> <url>
-
-# Use cookies directly from Chrome browser
-yt-dlp --cookies-from-browser chrome <url>
-
-# Keep a download archive to skip already-downloaded items
-yt-dlp --download-archive downloaded.txt <url>
+$ cookies: echo -e '--cookies-from-browser chrome\n ' --- --header "Use cookies? (select blank for no)"
