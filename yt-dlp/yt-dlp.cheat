@@ -48,5 +48,8 @@ yt-dlp -r 2M <url>
 # Use cookies from browser (exported file)
 yt-dlp --cookies <cookies.txt> <url>
 
+# Use cookies directly from Chrome browser
+yt-dlp --cookies-from-browser chrome <url>
+
 # Keep a download archive to skip already-downloaded items
 yt-dlp --download-archive downloaded.txt <url>
